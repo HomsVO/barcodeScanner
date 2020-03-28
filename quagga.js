@@ -4449,8 +4449,8 @@ module.exports = {
         name: "Live",
         type: "LiveStream",
         constraints: {
-            width: 640,
-            height: 480,
+            width: "100vw",
+            height: "100vh",
             // aspectRatio: 640/480, // optional
             facingMode: "environment" },
         area: {

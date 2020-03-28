@@ -25,15 +25,22 @@ $(function() {
         init: function() {
             var self = this;
 
-            Quagga.init(this.state, function(err) {
-                if (err) {
-                    return self.handleError(err);
-                }
-                //Quagga.registerResultCollector(resultCollector);
-                App.attachListeners();
-                App.checkCapabilities();
-                Quagga.start();
-            });
+
+            $('.start').on('click',function(e){
+
+                Quagga.init(self.state, function(err) {
+                    if (err) {
+                        return self.handleError(err);
+                    }
+                    //Quagga.registerResultCollector(resultCollector);
+                    App.attachListeners();
+                    App.checkCapabilities();
+                    Quagga.start();
+                });
+
+               
+            })
+           
         },
         handleError: function(err) {
             console.log(err);
@@ -120,7 +127,6 @@ $(function() {
                     name = $target.attr("name"),
                     state = self._convertNameToState(name);
 
-                console.log("Value of "+ state + " changed to " + value);
                 self.setState(state, value);
             });
         },
@@ -231,14 +237,14 @@ $(function() {
             inputStream: {
                 type : "LiveStream",
                 constraints: {
-                    width: {min: 640},
-                    height: {min: 480},
+                    width: {min: "100vw"},
+                    height: {min: "100vh"},
                     facingMode: "environment",
                     aspectRatio: {min: 1, max: 2}
                 }
             },
             locator: {
-                patchSize: "medium",
+                patchSize: "large",
                 halfSample: true
             },
             numOfWorkers: 2,
@@ -282,16 +288,7 @@ $(function() {
 
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
-
-        if (App.lastResult !== code) {
-            App.lastResult = code;
-            var $node = null, canvas = Quagga.canvas.dom.image;
-
-            $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
-            $node.find("img").attr("src", canvas.toDataURL());
-            $node.find("h4.code").html(code);
-            $("#result_strip ul.thumbnails").prepend($node);
-        }
+        $('.result').val(code);
     });
 
 });
