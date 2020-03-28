@@ -24,8 +24,7 @@ $(function() {
     var App = {
         init: function() {
             var self = this;
-            console.log(screen);
-
+            console.log(self.state);
             $('.start').on('click', function(e){
 
                 $('<div>', {class:'viewport', id:'interactive'}).appendTo('body');
@@ -48,13 +47,13 @@ $(function() {
             console.log(err);
         },
         checkCapabilities: function() {
-            var track = Quagga.CameraAccess.getActiveTrack();
-            var capabilities = {};
-            if (typeof track.getCapabilities === 'function') {
-                capabilities = track.getCapabilities();
-            }
-            this.applySettingsVisibility('zoom', capabilities.zoom);
-            this.applySettingsVisibility('torch', capabilities.torch);
+            // var track = Quagga.CameraAccess.getActiveTrack();
+            // var capabilities = {};
+            // if (typeof track.getCapabilities === 'function') {
+            //     capabilities = track.getCapabilities();
+            // }
+            // this.applySettingsVisibility('zoom', capabilities.zoom);
+            // this.applySettingsVisibility('torch', capabilities.torch);
         },
         updateOptionsForMediaRange: function(node, range) {
             var NUM_STEPS = 6;
@@ -226,10 +225,9 @@ $(function() {
             inputStream: {
                 type : "LiveStream",
                 constraints: {
-                    width: {min: screen.width},
-                    height: {min: screen.height},
-                    facingMode: "environment",
-                    aspectRatio: {min: 1, max: 2}
+                    width: screen.width,
+                    height: screen.height,
+                    facingMode: "user",
                 }
             },
             locator: {
