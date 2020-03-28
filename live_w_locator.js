@@ -42,19 +42,23 @@ $(function() {
         },
         toggleFullscreen : function(){
             
-            let video =  document.getElementsByTagName('video')[0];
+            let vid =  document.getElementsByTagName('video')[0];
                 // video.setMediaController(null)
 
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) {
-                video.webkitRequestFullscreen();
-            } else if (video.webkitEnterFullscreen) {
-                video.webkitEnterFullscreen();
-            } else if (video.mozRequestFullScreen) {
-                video.mozRequestFullScreen();
-            } else if (video.msRequestFullscreen) {
-                video.msRequestFullscreen();
+            if (vid.requestFullscreen) {
+                vid.requestFullscreen();
+            }
+            if (vid.webkitRequestFullscreen) {
+                vid.webkitRequestFullscreen();
+            }
+            if (vid.webkitEnterFullscreen) {
+                vid.webkitEnterFullscreen();
+            }
+            if (vid.mozRequestFullScreen) {
+                vid.mozRequestFullScreen();
+            }
+            if (vid.msRequestFullscreen) {
+                vid.msRequestFullscreen();
             }
         },
         handleError: function(err) {
