@@ -266,7 +266,6 @@ $(function() {
             locator: {
                 patchSize: "small",
             },
-            frequency: 1000,
         },
         lastResult : null
     };
