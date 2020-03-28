@@ -37,13 +37,12 @@ $(function() {
                     Quagga.start();
                 });
             $('.start').on('click', function(e){
-               
-                self.toggleFullscreen();
-                
+                self.toggleFullscreen()
             })
            
         },
         toggleFullscreen : function(){
+            
             let video =  document.getElementsByTagName('video')[0];
                 // video.setMediaController(null)
 
@@ -51,6 +50,8 @@ $(function() {
                 video.requestFullscreen();
             } else if (video.webkitRequestFullscreen) {
                 video.webkitRequestFullscreen();
+            } else if (video.webkitEnterFullScreen) {
+                video.webkitEnterFullScreen();
             } else if (video.mozRequestFullScreen) {
                 video.mozRequestFullScreen();
             } else if (video.msRequestFullscreen) {
