@@ -267,7 +267,7 @@ $(function() {
                 patchSize: "small",
                 halfSample: true
             },
-            frequency: 20,
+            frequency: 100,
         },
         lastResult : null
     };
