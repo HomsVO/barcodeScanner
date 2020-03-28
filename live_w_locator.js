@@ -30,13 +30,12 @@ $(function() {
 
                 $('<div>', {class:'viewport', id:'interactive'}).appendTo('body');
                 $('<button>', {class:'stop',text:'stop'}).appendTo('#interactive');
-
+                App.attachListeners();
                 Quagga.init(self.state, function(err) {
                     if (err) {
                         return self.handleError(err);
                     }
                     //Quagga.registerResultCollector(resultCollector);
-                    App.attachListeners();
                     App.checkCapabilities();
                     Quagga.start();
                 });
