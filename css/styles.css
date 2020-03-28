@@ -302,7 +302,9 @@ i.icon-24-scan {
   display: none!important;
   -webkit-appearance: none;
 }
-
+::-webkit-media-controls {
+  display:none !important;
+}
 /* New shadow dom for play button */
 
 /* This one works! */

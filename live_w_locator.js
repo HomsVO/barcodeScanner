@@ -25,10 +25,8 @@ $(function() {
         init: function() {
             var self = this;
             console.log(self.state);
-            $('.start').on('click', function(e){
                 $('<div>', {class:'viewport', id:'interactive'}).appendTo('body');
                 $('<button>', {class:'stop',text:'stop'}).appendTo('#interactive');
-                
                 App.attachListeners();
                 Quagga.init(self.state, function(err) {
                     if (err) {
@@ -38,6 +36,8 @@ $(function() {
                     App.checkCapabilities();
                     Quagga.start();
                 });
+            $('.start').on('click', function(e){
+               
                 self.toggleFullscreen();
                 
             })
