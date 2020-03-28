@@ -45,7 +45,7 @@ $(function() {
         },
         toggleFullscreen : function(){
             let video =  document.getElementsByTagName('video')[0];
-                video.setMediaController(null)
+                // video.setMediaController(null)
 
             if (video.requestFullscreen) {
                 video.requestFullscreen();
