@@ -65,6 +65,13 @@ footer {
   height: 100vh;
 }
 
+.stop{
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
 
 #interactive.viewport canvas, video {
   float: left;
