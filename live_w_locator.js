@@ -49,10 +49,8 @@ $(function() {
                 video.requestFullscreen();
             } else if (video.webkitRequestFullscreen) {
                 video.webkitRequestFullscreen();
-            } else if (video.webkitEnterFullScreen) {
+            } else if (video.webkitEnterFullscreen) {
                 video.webkitEnterFullscreen();
-            } else if (video.webkitDisplayingFullscreen) {
-                video.webkitDisplayingFullscreen();
             } else if (video.mozRequestFullScreen) {
                 video.mozRequestFullScreen();
             } else if (video.msRequestFullscreen) {
