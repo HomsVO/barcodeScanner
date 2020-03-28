@@ -225,7 +225,7 @@ i.icon-24-scan {
 @media (max-width: 603px) {
 
   #container {
-    width: 300px;
+    width: 100%;
     margin: 10px auto;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -251,16 +251,15 @@ i.icon-24-scan {
   }
 
   #interactive.viewport {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: auto;
     overflow: hidden;
   }
 
 
   #interactive.viewport canvas, video {
-    margin-top: -50px;
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    height: auto;
   }
 
   #interactive.viewport canvas.drawingBuffer, video.drawingBuffer {
@@ -292,8 +291,8 @@ i.icon-24-scan {
 @media (max-width: 603px) {
 
   .overlay.scanner {
-    width: 640px;
-    height: 510px;
+    width: 100%;
+    height: auto;
     padding: 20px;
     margin-top: -275px;
     margin-left: -340px;
