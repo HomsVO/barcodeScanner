@@ -288,6 +288,9 @@ i.icon-24-scan {
     height: 180px;
   }
 }
+video::-webkit-media-controls {
+  display:none !important;
+}
 /* @media all and (orientation: portrait) and (max-width: 603px) {
   #interactive {
     transform: rotate(-90deg);
