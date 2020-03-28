@@ -227,7 +227,7 @@ $(function() {
                 constraints: {
                     width: screen.width,
                     height: screen.height,
-                    facingMode: "user",
+                    facingMode: "environment",
                 }
             },
             locator: {
@@ -237,10 +237,7 @@ $(function() {
             numOfWorkers: 2,
             frequency: 10,
             decoder: {
-                readers : [{
-                    format: "code_128_reader",
-                    config: {}
-                }]
+                readers : ["code_128_reader","code_39_reader"]
             },
             locate: true
         },
