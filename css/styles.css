@@ -288,7 +288,7 @@ i.icon-24-scan {
     height: 180px;
   }
 }
-@media all and (orientation: portrait) and (max-width: 603px) {
+/* @media all and (orientation: portrait) and (max-width: 603px) {
   #interactive {
     transform: rotate(-90deg);
     transform-origin: left top;
@@ -298,4 +298,4 @@ i.icon-24-scan {
     top: 100%;
     left: 0;
   }
-}
+} */

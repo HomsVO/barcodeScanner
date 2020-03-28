@@ -26,9 +26,9 @@ $(function() {
             var self = this;
             console.log(self.state);
             $('.start').on('click', function(e){
-
                 $('<div>', {class:'viewport', id:'interactive'}).appendTo('body');
                 $('<button>', {class:'stop',text:'stop'}).appendTo('#interactive');
+                
                 App.attachListeners();
                 Quagga.init(self.state, function(err) {
                     if (err) {
@@ -39,7 +39,7 @@ $(function() {
                     Quagga.start();
                 });
 
-               
+                document.getElementsByTagName('video')[0].requestFullscreen();
             })
            
         },
@@ -47,13 +47,13 @@ $(function() {
             console.log(err);
         },
         checkCapabilities: function() {
-            // var track = Quagga.CameraAccess.getActiveTrack();
-            // var capabilities = {};
-            // if (typeof track.getCapabilities === 'function') {
-            //     capabilities = track.getCapabilities();
-            // }
-            // this.applySettingsVisibility('zoom', capabilities.zoom);
-            // this.applySettingsVisibility('torch', capabilities.torch);
+            var track = Quagga.CameraAccess.getActiveTrack();
+            var capabilities = {};
+            if (typeof track.getCapabilities === 'function') {
+                capabilities = track.getCapabilities();
+            }
+            this.applySettingsVisibility('zoom', capabilities.zoom);
+            this.applySettingsVisibility('torch', capabilities.torch);
         },
         updateOptionsForMediaRange: function(node, range) {
             var NUM_STEPS = 6;
