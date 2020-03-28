@@ -263,10 +263,6 @@ $(function() {
                 readers : ["code_128_reader","code_39_reader"]
             },
             locate: true,
-            locator: {
-                patchSize: "small",
-                halfSample: true
-            },
             frequency: 100,
         },
         lastResult : null
