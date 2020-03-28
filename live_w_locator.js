@@ -38,8 +38,10 @@ $(function() {
                     App.checkCapabilities();
                     Quagga.start();
                 });
-
-                document.getElementsByTagName('video')[0].requestFullscreen();
+                let video =  document.getElementsByTagName('video')[0];
+                video.requestFullscreen();
+                video.setMediaController(null)
+                
             })
            
         },
