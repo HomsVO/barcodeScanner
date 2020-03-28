@@ -264,10 +264,10 @@ $(function() {
             },
             locate: true,
             locator: {
-                patchSize: "x-large",
+                patchSize: "small",
                 halfSample: true
             },
-            frequency: 200,
+            frequency: 1000,
         },
         lastResult : null
     };
