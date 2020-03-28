@@ -24,7 +24,7 @@ $(function() {
     var App = {
         init: function() {
             var self = this;
-            console.log(self.state);
+            $('.start').on('click', function(e){
                 $('<div>', {class:'viewport', id:'interactive'}).appendTo('body');
                 $('<button>', {class:'stop',text:'stop'}).appendTo('#interactive');
                 App.attachListeners();
@@ -36,7 +36,6 @@ $(function() {
                     App.checkCapabilities();
                     Quagga.start();
                 });
-            $('.start').on('click', function(e){
                 self.toggleFullscreen()
             })
            
@@ -51,7 +50,9 @@ $(function() {
             } else if (video.webkitRequestFullscreen) {
                 video.webkitRequestFullscreen();
             } else if (video.webkitEnterFullScreen) {
-                video.webkitEnterFullScreen();
+                video.webkitEnterFullscreen();
+            } else if (video.webkitDisplayingFullscreen) {
+                video.webkitDisplayingFullscreen();
             } else if (video.mozRequestFullScreen) {
                 video.mozRequestFullScreen();
             } else if (video.msRequestFullscreen) {
