@@ -264,7 +264,7 @@ $(function() {
             },
             locate: true,
             locator: {
-                patchSize: "medium",
+                patchSize: "small",
                 halfSample: true
             }
         },
