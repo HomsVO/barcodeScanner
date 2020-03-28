@@ -262,7 +262,11 @@ $(function() {
             decoder: {
                 readers : ["code_128_reader","code_39_reader"]
             },
-            locate: true
+            locate: true,
+            locator: {
+                patchSize: "medium",
+                halfSample: true
+            }
         },
         lastResult : null
     };
