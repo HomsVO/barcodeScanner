@@ -42,7 +42,8 @@ $(function() {
         },
         toggleFullscreen : function(){
             
-            let vid =  document.getElementsByTagName('video')[0];
+            // let vid =  document.getElementsByTagName('video')[0];
+            let vid =  document.getElementById('interactive');
                 // video.setMediaController(null)
 
             if (vid.requestFullscreen) {
