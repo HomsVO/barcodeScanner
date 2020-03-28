@@ -139,7 +139,16 @@ $(function() {
                 Quagga.stop();
                 $('#interactive').remove();
             });
-            
+            document.addEventListener('fullscreenchange', (event) => {
+                // document.fullscreenElement will point to the element that
+                // is in fullscreen mode if there is one. If there isn't one,
+                // the value of the property is null.
+                if (document.fullscreenElement) {
+
+                } else {
+                    $('#interactive').remove();
+                }
+              });
             $(".controls .reader-config-group").on("change", "input, select", function(e) {
                 e.preventDefault();
                 var $target = $(e.target),
