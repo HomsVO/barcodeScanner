@@ -225,8 +225,8 @@ $(function() {
             inputStream: {
                 type : "LiveStream",
                 constraints: {
-                    width: window.innerWidth,
-                    height: window.innerHeight,
+                    width: window.innerHeight,
+                    height: window.innerWidth,
                     facingMode: "environment",
                 }
             },
