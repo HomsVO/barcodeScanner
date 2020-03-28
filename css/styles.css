@@ -291,7 +291,7 @@ i.icon-24-scan {
 /* This used to work for the parent element of button divs */
 /* But it does not work with newer browsers, the below doesn't hide the play button parent div */
 
-/* *::-webkit-media-controls-panel {
+*::-webkit-media-controls-panel {
   display: none!important;
   -webkit-appearance: none;
 }
@@ -314,14 +314,3 @@ i.icon-24-scan {
   -webkit-appearance: none;
 } */
 
-/* @media all and (orientation: portrait) and (max-width: 603px) {
-  #interactive {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
-} */
