@@ -43,11 +43,10 @@ $(function() {
         toggleFullscreen : function(){
             
             let vid =  document.getElementsByTagName('video')[0];
-            if(video.setMediaController){
-                video.setMediaController(null)
+            if(vid.setMediaController){
+                vid.setMediaController(null)
             }
-                
-
+            
             if (vid.requestFullscreen) {
                 vid.requestFullscreen();
             }
@@ -140,7 +139,7 @@ $(function() {
                 Quagga.stop();
                 $('#interactive').remove();
             });
-
+            
             $(".controls .reader-config-group").on("change", "input, select", function(e) {
                 e.preventDefault();
                 var $target = $(e.target),
