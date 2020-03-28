@@ -257,14 +257,16 @@ $(function() {
                     width: window.innerHeight,
                     height: window.innerWidth,
                     facingMode: "environment",
+                    aspectRatio: {min: 1, max: 2}
                 }
             },
             decoder: {
                 readers : ["code_128_reader","code_39_reader"]
             },
             locate: true,
+            numOfWorkers: 2,
             locator: {
-                patchSize: "medium",
+                patchSize: "small",
                 halfSample: true
             },
             frequency: 100,
