@@ -288,6 +288,15 @@ i.icon-24-scan {
     height: 180px;
   }
 }
+/* This used to work for the parent element of button divs */
+/* But it does not work with newer browsers, the below doesn't hide the play button parent div */
+
+/* *::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
 
 *::-webkit-media-controls-play-button {
   display: none!important;
@@ -296,9 +305,23 @@ i.icon-24-scan {
 ::-webkit-media-controls {
   display:none !important;
 }
+/* New shadow dom for play button */
+
+/* This one works! */
 
 *::-webkit-media-controls-start-playback-button {
   display: none!important;
   -webkit-appearance: none;
 }
 
+/* @media all and (orientation: portrait) and (max-width: 603px) {
+  #interactive {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+} */
