@@ -38,12 +38,25 @@ $(function() {
                     App.checkCapabilities();
                     Quagga.start();
                 });
-                let video =  document.getElementsByTagName('video')[0];
-                video.requestFullscreen();
-                video.setMediaController(null)
+                self.toggleFullscreen();
                 
             })
            
+        },
+        toggleFullscreen : function(){
+            let video =  document.getElementsByTagName('video')[0];
+                video.requestFullscreen();
+                video.setMediaController(null)
+
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
         },
         handleError: function(err) {
             console.log(err);
