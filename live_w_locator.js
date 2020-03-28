@@ -26,7 +26,10 @@ $(function() {
             var self = this;
 
 
-            $('.start').on('click',function(e){
+            $('.start').on('click', function(e){
+
+                $('<div>', {class:'viewport', id:'interactive'}).appendTo('body');
+                $('<button>', {class:'stop',text:'stop'}).appendTo('#interactive');
 
                 Quagga.init(self.state, function(err) {
                     if (err) {
@@ -55,7 +58,6 @@ $(function() {
             this.applySettingsVisibility('torch', capabilities.torch);
         },
         updateOptionsForMediaRange: function(node, range) {
-            console.log('updateOptionsForMediaRange', node, range);
             var NUM_STEPS = 6;
             var stepSize = (range.max - range.min) / NUM_STEPS;
             var option;
@@ -114,10 +116,11 @@ $(function() {
             var self = this;
 
             self.initCameraSelection();
-            $(".controls").on("click", "button.stop", function(e) {
+            $(".stop").on("click", function(e) {
                 e.preventDefault();
                 Quagga.stop();
                 self._printCollectedResults();
+                $('#interactive').remove();
             });
 
             $(".controls .reader-config-group").on("change", "input, select", function(e) {
@@ -288,6 +291,7 @@ $(function() {
 
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
+        $('#interactive').remove();
         $('.result').val(code);
     });
 
