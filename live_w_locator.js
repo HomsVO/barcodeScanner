@@ -230,12 +230,6 @@ $(function() {
                     facingMode: "environment",
                 }
             },
-            locator: {
-                patchSize: "large",
-                halfSample: true
-            },
-            numOfWorkers: 2,
-            frequency: 10,
             decoder: {
                 readers : ["code_128_reader","code_39_reader"]
             },
