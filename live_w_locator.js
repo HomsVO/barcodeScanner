@@ -36,7 +36,7 @@ $(function() {
                     App.checkCapabilities();
                     Quagga.start();
                 });
-                self.toggleFullscreen()
+                // self.toggleFullscreen()
             })
            
         },
