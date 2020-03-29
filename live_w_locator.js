@@ -36,9 +36,32 @@ $(function() {
                     App.checkCapabilities();
                     Quagga.start();
                 });
-                // $('video').fullScreen();
+                self.toggleFullscreen()
             })
            
+        },
+        toggleFullscreen : function(){
+            
+            let vid =  document.getElementsByTagName('video')[0];
+            if(vid.setMediaController){
+                vid.setMediaController(null)
+            }
+            
+            if (vid.requestFullscreen) {
+                vid.requestFullscreen();
+            }
+            if (vid.webkitRequestFullscreen) {
+                vid.webkitRequestFullscreen();
+            }
+            if (vid.webkitEnterFullscreen) {
+                vid.webkitEnterFullscreen();
+            }
+            if (vid.mozRequestFullScreen) {
+                vid.mozRequestFullScreen();
+            }
+            if (vid.msRequestFullscreen) {
+                vid.msRequestFullscreen();
+            }
         },
         handleError: function(err) {
             console.log(err);
