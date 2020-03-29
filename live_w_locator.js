@@ -36,20 +36,9 @@ $(function() {
                     App.checkCapabilities();
                     Quagga.start();
                 });
-                self.toggleFullscreen()
+                // $('video').fullScreen();
             })
            
-        },
-        toggleFullscreen : function(){
-            
-            // let vid =  document.getElementsByTagName('video')[0];
-            // if(vid.setMediaController){
-            //     vid.setMediaController(null)
-            // }
-            // vid.requestFullscreen();
-
-            $('video').fullScreen();
-        
         },
         handleError: function(err) {
             console.log(err);
