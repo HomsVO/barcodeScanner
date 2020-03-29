@@ -298,8 +298,11 @@ $(function() {
 
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
-        $('#interactive').remove();
-        $('#iccid').val(code);
+        setTimeout(()=>{
+            $('#interactive').remove();
+            $('#iccid').val(code);
+        },1000)
+
     });
 
 });
