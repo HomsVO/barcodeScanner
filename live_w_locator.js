@@ -46,22 +46,8 @@ $(function() {
             if(vid.setMediaController){
                 vid.setMediaController(null)
             }
-            
-            if (vid.requestFullscreen) {
-                vid.requestFullscreen();
-            }
-            if (vid.webkitRequestFullscreen) {
-                vid.webkitRequestFullscreen();
-            }
-            if (vid.webkitEnterFullscreen) {
-                vid.webkitEnterFullscreen();
-            }
-            if (vid.mozRequestFullScreen) {
-                vid.mozRequestFullScreen();
-            }
-            if (vid.msRequestFullscreen) {
-                vid.msRequestFullscreen();
-            }
+            vid.requestFullscreen();
+        
         },
         handleError: function(err) {
             console.log(err);
