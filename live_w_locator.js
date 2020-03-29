@@ -42,11 +42,13 @@ $(function() {
         },
         toggleFullscreen : function(){
             
-            let vid =  document.getElementsByTagName('video')[0];
-            if(vid.setMediaController){
-                vid.setMediaController(null)
-            }
-            vid.requestFullscreen();
+            // let vid =  document.getElementsByTagName('video')[0];
+            // if(vid.setMediaController){
+            //     vid.setMediaController(null)
+            // }
+            // vid.requestFullscreen();
+
+            $('video').fullScreen();
         
         },
         handleError: function(err) {
