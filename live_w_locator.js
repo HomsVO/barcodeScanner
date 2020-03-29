@@ -24,7 +24,7 @@ $(function() {
     var App = {
         init: function() {
             var self = this;
-            $('.start').on('click', function(e){
+            $('#scan').on('click', function(e){
                 $('<div>', {class:'viewport', id:'interactive'}).appendTo('body');
                 $('<button>', {class:'stop',text:'stop'}).appendTo('#interactive');
                 App.attachListeners();
@@ -299,7 +299,7 @@ $(function() {
     Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
         $('#interactive').remove();
-        $('.result').val(code);
+        $('#iccid').val(code);
     });
 
 });
